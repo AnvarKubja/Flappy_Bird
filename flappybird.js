@@ -6,8 +6,8 @@ let boardHeight = 640;
 let context;
 
 //bird
-let birdWidth = 34; //width/height ratio = 408/228 = 17/12
-let birdHeight = 24;
+let birdWidth = 44; //width/height ratio = 408/228 = 17/12
+let birdHeight = 34;
 let birdX = boardWidth/8;
 let birdY = boardHeight/2;
 let birdImg;
@@ -105,11 +105,25 @@ function update() {
 
     //score
     context.fillStyle = "white";
-    context.font="45px sans-serif";
-    context.fillText(score, 5, 45);
+    context.font="40px 'Luckiest Guy'";
+
+    context.lineWidth = 4;
+    context.strokeStyle = "black";
+    context.strokeText(score, boardWidth / 2, 45);
+
+    context.fillStyle = "white";
+    context.fillText(score, boardWidth / 2, 45);
 
     if (gameOver) {
-        context.fillText("GAME OVER", 5, 90);
+        context.textAlign = "center";
+        context.font = "50px 'Luckiest Guy'";
+    
+        context.lineWidth = 5;
+        context.strokeStyle = "black";
+        context.strokeText("GAME OVER", boardWidth / 2, boardHeight / 2);
+    
+        context.fillStyle = "white";
+        context.fillText("GAME OVER", boardWidth / 2, boardHeight / 2);
     }
 }
 
