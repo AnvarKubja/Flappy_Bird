@@ -11,5 +11,26 @@
     </head>
     <body>
         <canvas id="board"></canvas>
+
+        <script>
+            // Arvutab sobiva scale'i nii et canvas mahub ekraanile
+            function scaleCanvas() {
+                const canvas = document.getElementById("board");
+                if (!canvas) return;
+ 
+                const boardW = 360;
+                const boardH = 640;
+                const padding = 20; // väike vaba ruum ääres
+ 
+                const scaleX = (window.innerWidth - padding) / boardW;
+                const scaleY = (window.innerHeight - padding) / boardH;
+                const scale = Math.min(scaleX, scaleY); // kitsam suund dikteerib
+ 
+                canvas.style.transform = `scale(${scale})`;
+            }
+ 
+            window.addEventListener("load", scaleCanvas);
+            window.addEventListener("resize", scaleCanvas);
+        </script>
     </body>
 </html>

@@ -1,9 +1,22 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+    background-color: #1a1a2e;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 #board {
     /* background-color: skyblue; */
     background-image: url("./flappybirdbg.png");
+    /* Skaleerib canvase nii et see mahub ekraani kõrgusesse,
+       säilitades 360x640 kuvasuhet. transform-origin: top center
+       hoiab canvase tsentreeritud. */
+    transform-origin: center center;
+    image-rendering: pixelated; /* hoiab pildid teravana suumides */
 }
