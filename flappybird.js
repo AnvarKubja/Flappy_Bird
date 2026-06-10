@@ -177,7 +177,8 @@ function moveBird(e) {
             pipeArray = [];
             score = 0;
             gameOver = false;
-            lastTime = 0; // reset delta time reset mängus
+            lastTime = 0;
+            velocityY = 0;// reset delta time reset mängus
         }
     }
 }
